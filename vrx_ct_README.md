@@ -42,12 +42,12 @@ cd vrx_ct
 ```
 # change permission of .sh files
 ```
-chmod +x dump_to_s3.sh  clean.sh 
+chmod +x vrx_ct_dump_to_s3.sh  vrx_ct_clean.sh 
 ```
 
 # install pip dependencies
 ```
-pip install -r zzrequirements.txt 
+pip install -r vrx_ct_requirements.txt 
 ```
 # install Cron jobs for Parsing
 ```
