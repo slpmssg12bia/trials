@@ -62,7 +62,7 @@ crontab -e
 ```
 # Create Cron Job
 ```
-0 0 * * TUE  /home/ubuntu/clinical_trials/python3 static_cron.py
+0 0 * * SUN  /home/ubuntu/vrx_ct/python3 static_cron.py
 
 ctrl x
 
