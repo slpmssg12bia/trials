@@ -31,7 +31,7 @@ aws s3 ls
 
 # Clone your Repo
 ```
-git clone https://github.com/slpmssg12bia/vrx_ct
+git clone https://github.com/slpmssg12bia/vrx_ct.git
 
 
 ```
