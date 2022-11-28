@@ -37,7 +37,7 @@ git clone https://github.com/slpmssg12bia/vrx_ct
 ```
 # cd into the repository
 ```
-cd clinical_trials
+cd vrx_ct
 
 ```
 # change permission of .sh files
