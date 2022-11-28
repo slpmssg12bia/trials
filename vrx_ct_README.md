@@ -42,7 +42,7 @@ cd vrx_ct
 ```
 # change permission of .sh files
 ```
-chmod +x vrx_ct_dump_to_s3.sh  vrx_ct_clean.sh 
+chmod +x vrx_ct_dump_to_s3.sh  
 ```
 
 # install pip dependencies
