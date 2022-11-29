@@ -37,7 +37,7 @@ def download_and_extract(urls):
         subprocess.run(["unzip", "db.zip"])
         print("uploading the latest dump to s3")
         subprocess.run(["bash", "vrx_ct_dump_to_s3.sh"])
-        #subprocess.run(["bash", "vrx_ct_clean.sh"])
+        subprocess.run(["bash", "vrx_ct_clean.sh"])
         return
 
 r = requests.get('https://aact.ctti-clinicaltrials.org/download')
