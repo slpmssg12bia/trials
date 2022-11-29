@@ -1,5 +1,6 @@
 #!/bin/bash
-mkdir dump
-mv *.txt dump
+mkdir "$(date +"%d-%m-%Y")-dump"
+mv *.txt "$(date +"%d-%m-%Y")-dump"
+aws s3 cp   s3://aact/
 
-aws s3 sync dump/ s3://viquity-database-import-us-east-1/Jobs/aact/dump-"$(date +%d-%m)"/
+
