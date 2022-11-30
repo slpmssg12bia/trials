@@ -31,23 +31,23 @@ aws s3 ls
 
 # Clone your Repo
 ```
-git clone https://github.com/slpmssg12bia/vrx_ct.git
+git clone https://github.com/slpmssg12bia/trials.git
 
 
 ```
 # cd into the repository
 ```
-cd vrx_ct
+cd trials
 
 ```
 # change permission of .sh files
 ```
-chmod +x  vrx_ct_dump_to_s3.sh  vrx_ct_clean.sh
+chmod +x  trials_dump_to_s3.sh  trials_clean.sh
 ```
 
 # install pip dependencies
 ```
-pip install -r vrx_ct_requirements.txt 
+pip install -r trials_requirements.txt 
 ```
 # install Cron jobs for Parsing
 ```
@@ -62,7 +62,7 @@ crontab -e
 ```
 # Create Cron Job
 ```
-0 0 * * SUN  /home/ubuntu/vrx_ct/python3 vrx_ct_cron.py
+0 0 * * SUN  /home/ubuntu/vrx_ct/python3 trials_cron.py
 
 ctrl x
 
