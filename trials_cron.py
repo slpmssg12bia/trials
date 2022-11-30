@@ -14,7 +14,7 @@ def get_urls(soup):
         ul = a.find_all(text=re.compile("_pipe-delimited-export"))
         if ul != []:
             urls.append(a)
-    print('done scarping the url......!!!!')
+    print('done scraping the url...!')
     return urls
 
 def download_and_extract(urls):
@@ -36,8 +36,8 @@ def download_and_extract(urls):
         subprocess.run(["mv", slashurl[3], "db.zip"])
         subprocess.run(["unzip", "db.zip"])
         print("uploading the latest dump to s3")
-        subprocess.run(["bash", "vrx_ct_dump_to_s3.sh"])
-        subprocess.run(["bash", "vrx_ct_clean.sh"])
+        subprocess.run(["bash", "trials_dump_to_s3.sh"])
+        subprocess.run(["bash", "trials_clean.sh"])
         return
 
 r = requests.get('https://aact.ctti-clinicaltrials.org/download')
