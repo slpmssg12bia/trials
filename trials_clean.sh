@@ -9,3 +9,4 @@ rm db.zip
 #enter code above
 #ctrl X
 #Y
+#chmod +x trials_clean.sh
