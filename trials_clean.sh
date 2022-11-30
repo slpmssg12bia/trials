@@ -8,4 +8,4 @@ rm db.zip
 #nano trials_clean.sh
 #enter code above
 #ctrl X
-Y
+#Y
