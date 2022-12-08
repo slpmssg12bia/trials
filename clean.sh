@@ -1,3 +1,3 @@
 #!/bin/bash
-rm -rf trialsdump
+rm -rf dump
 rm db.zip
