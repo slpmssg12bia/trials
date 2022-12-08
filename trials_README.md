@@ -35,7 +35,7 @@ json
 
 # Clone Git Repository
 ```
-git clone https://github.com/slpmssg12bia/nppes.git
+git clone https://github.com/slpmssg12bia/trials.git
 ```
 # cd into the repository
 ```
@@ -59,7 +59,7 @@ nano trials_dump_to_s3.sh
 #!/bin/bash
 mkdir dump
 mv *.txt dump
-aws s3 sync dump/ s3://viquity-database-import-us-east-1/Jobs/trials/dump-"$(date +%d-%m-%y-%H-%M)"/
+aws s3 sync dump/ s3://viquity-database-import-us-east-1/Jobs/aact/dump-"$(date +%d-%m-%y-%H-%M)"/
 
 ctrl X
 Y
