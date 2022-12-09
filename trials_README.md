@@ -47,7 +47,7 @@ touch trials_clean.sh
 nano trials_clean.sh
 
 #!/bin/bash
-rm -rf dump
+rm -rf trialsdump
 rm db.zip
 
 ctrl X
@@ -57,9 +57,9 @@ touch trials_dump_to_s3.sh
 nano trials_dump_to_s3.sh
 
 #!/bin/bash
-mkdir dump
-mv *.txt dump
-aws s3 sync dump/ s3://viquity-database-import-us-east-1/Jobs/aact/dump-"$(date +%d-%m-%y-%H-%M)"/
+mkdir trialsdump
+mv *.txt trialsdump
+aws s3 sync trialsdump/ s3://viquity-database-import-us-east-1/Jobs/aact/trialsdump-"$(date +%d-%m-%y-%H-%M)"/
 
 ctrl X
 Y
@@ -69,7 +69,7 @@ nano trials_cron.sh
 
 #!/bin/bash
 cd /home/ubuntu/trials
-python3 /home/ubuntu/trials/trials_cron.py
+python3 trials_cron.py
 
 ctrl X
 Y
