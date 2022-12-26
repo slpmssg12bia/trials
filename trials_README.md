@@ -48,7 +48,7 @@ touch trials_archive_s3.sh
 nano trials_archive_s3.sh
 
 #!/bin/bash
-aws s3 sync trialsdump/ s3://viquity-database-import-us-east-1/Jobs/trials/trials_archive/trialsdump-"$(date +%d-%m-%y-%H-%M)"/
+aws s3 sync trialsdump/ s3://viquity-database-import-us-east-1/Jobs/aact/aact_archive/trialsdump-"$(date +%d-%m-%y-%H-%M)"/
 
 ctrl X
 Y
