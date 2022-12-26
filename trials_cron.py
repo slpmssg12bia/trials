@@ -36,8 +36,12 @@ def download_and_extract(urls):
         subprocess.run(["mv", slashurl[3], "db.zip"])
         subprocess.run(["unzip", "db.zip"])
         print("uploading the latest dump to s3")
+        
+        subprocess.run(["bash", "/home/ubuntu/trials/trials_remove_old_dump.sh"])
         subprocess.run(["bash", "/home/ubuntu/trials/trials_dump_to_s3.sh"])
+        subprocess.run(["bash", "/home/ubuntu/trials/trials_archive.sh"])
         subprocess.run(["bash", "/home/ubuntu/trials/trials_clean.sh"])
+        
         return
 
 r = requests.get('https://aact.ctti-clinicaltrials.org/download')
