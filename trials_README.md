@@ -43,27 +43,26 @@ cd trials
 ```
 # Recreate bash Files
 ```
+
+touch trials_archive_s3.sh
+nano trials_archive_s3.sh
+
+#!/bin/bash
+aws s3 sync trialsdump/ s3://viquity-database-import-us-east-1/Jobs/trials/trials_archive/trialsdump-"$(date +%d-%m-%y-%H-%M)"/
+
+ctrl X
+Y
+
+---------------------------------
 touch trials_clean.sh
 nano trials_clean.sh
 
 #!/bin/bash
 rm -rf trialsdump
-rm db.zip
 
 ctrl X
 Y
 ---------------------------------
-touch trials_dump_to_s3.sh
-nano trials_dump_to_s3.sh
-
-#!/bin/bash
-mkdir trialsdump
-mv *.txt trialsdump
-aws s3 sync trialsdump/ s3://viquity-database-import-us-east-1/Jobs/aact/trialsdump-"$(date +%d-%m-%y-%H-%M)"/
-
-ctrl X
-Y
-------------------------
 touch trials_cron.sh
 nano trials_cron.sh
 
@@ -73,15 +72,37 @@ python3 trials_cron.py
 
 ctrl X
 Y
+---------------------------------
+
+touch trials_dump_to_s3.sh
+nano trials_dump_to_s3.sh
+
+#!/bin/bash
+aws s3 sync trialsdump/ s3://viquity-database-import-us-east-1/Jobs/aact/aact_current_dump/trialsdump/
+
+ctrl X
+Y
+---------------------------------
+
+touch trials_remove_old_dump.sh
+nano trials_remove_old_dump.sh
+
+#!/bin/bash
+aws s3 rm s3://viquity-database-import-us-east-1/Jobs/aact/aact_current_dump --recursive
+
+ctrl X
+Y
 ```
+
 # Delete Original bash files
 ```
-rm clean.sh  dump_to_s3.sh  cron.sh
+rm archive_s3.sh  clean.sh  cron.sh  dump_to_s3.sh  remove_old_dump.sh 
 ```
 
 # Change Permissions of bash Files
 ```
-chmod +x   trials_clean.sh  trials_dump_to_s3.sh  trials_cron.sh
+chmod +x   trials_archive_s3.sh  trials_clean.sh  trials_cron.sh  trials_dump_to_s3.sh  trials_remove_old_dump.sh     
+
 ```
 
 # install pip dependencies
