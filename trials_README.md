@@ -125,7 +125,7 @@ nano /etc/crontab
 ```
 # Create Cron Job ~ https://crontab.guru/examples.html
 ```
-0 0 1 * *  root bash /home/ubuntu/trials/trials_cron.sh
+02 02 * * sat  root bash /home/ubuntu/trials/trials_cron.sh
 !!!CARRIAGE RETURN after line above!!!!!
 
 ctrl x
